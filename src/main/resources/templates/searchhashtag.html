@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hash Tag search page</title>
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<h3> Feeds based on hashtag from facebook</h3>
+
+<div id="hashtag">
+
+    <input type="text" id="hash-text" class="hash-text-class">
+    <input type="button" id="hash-search" class="hash-text-class">
+
+</div>
+</body>
+<script>
+
+$(document).ready(function(){
+
+    var textToSearch="EPL";
+    $.ajax({
+
+        url: "/search?hashtag="+textToSearch,
+        type: 'GET',
+        success: function(data){
+            console.log(data);
+        },
+        error: function(error){
+            console.log("error in search call");
+        }
+
+    });
+
+});
+
+
+</script>
+</html>

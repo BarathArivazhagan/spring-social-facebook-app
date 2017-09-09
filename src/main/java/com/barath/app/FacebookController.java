@@ -41,4 +41,10 @@ public class FacebookController {
         return "hello";
     }
 
+
+    @GetMapping(value="/route/search")
+    public String navigateToSearchPage(){
+        return "searchhashtag";
+    }
+
 }
